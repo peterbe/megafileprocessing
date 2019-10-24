@@ -9,14 +9,9 @@ def run(command):
     t0 = time.time()
     ran = subprocess.run(command, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     t1 = time.time()
-    # print(repr(command))
-    # print(repr(ran.stdout))
-    # print()
-    # print(repr(ran.stderr))
     for line in ran.stderr.decode('utf-8').splitlines():
         if 'maximum resident set size' in line:
             max_mem = int(line.strip().split()[0])
-        # print(repr(line))
 
     return max_mem, t1 - t0
 
@@ -43,7 +38,6 @@ def main(command):
     print("WORST: ", secs(max(times)))
     print("MEAN:  ", secs(statistics.mean(times)))
     print("MEDIAN:", secs(statistics.median(times)))
-
 
     print("MAX MEMORY")
     print("BEST:  ", mbytes(min(max_mems)))

@@ -7,7 +7,7 @@ for (let x = 0; x < 20; x++) {
   });
 }
 
-fs.readFile("./file.txt", "utf-8", (err, data) => {
-  if (err) throw err;
-  console.log("file.txt data: ", data.trim());
-});
+// fs.readFile("./file.txt", "utf-8", (err, data) => {
+//   if (err) throw err;
+//   console.log("file.txt data: ", data.trim());
+// });

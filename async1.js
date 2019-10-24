@@ -92,20 +92,6 @@ async function main(args) {
       }
     }
   }
-  // files.forEach(async file => {
-  //   try {
-  //     const total = await processDoc(file, quiet);
-  //     !quiet && console.log(`${file} is ${total}`);
-  //     totalTotal += total;
-  //   } catch (err) {
-  //     if (bail) {
-  //       throw err;
-  //     } else {
-  //       console.error(err);
-  //       errors++;
-  //     }
-  //   }
-  // });
   console.log(`Total length for ${files.length} files is ${totalTotal}`);
   if (errors) {
     console.warn(`${errors} files failed.`);
