@@ -77,11 +77,10 @@ async function main(args) {
   let totalTotal = 0;
   let errors = 0;
 
-  let values;
-  values = await Promise.all(
+  let values = await Promise.all(
     files.map(async file => {
       try {
-        total = await processDoc(file, quiet);
+        let total = await processDoc(file, quiet);
         !quiet && console.log(`${file} is ${total}`);
         return total;
       } catch (err) {
